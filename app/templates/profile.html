@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
+{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Страница пользователя</title>
+</head>
+<body>
+{% block content %}
+<b>{{user.username}}  </b>
+<form method="post" action="{% url 'logout' %}">
+    {% csrf_token %}
+    <button type="submit">logout</button>
+</form>
+{% endblock content %}
+</body>
+</html>

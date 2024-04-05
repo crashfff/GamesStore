@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
+{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Игра {{game}}</title>
+</head>
+
+<body>
+    {% block content %}
+    <img src="/app/media/{{game.photo_game}}" align="left" width="300" height="320" />
+    <h1>{{game.game_name}}</h1>
+    <b>Количество покупок: </b>{{game.quantity_purchased}}<br>
+    {% endblock content %}
+</body>
+
+</html>

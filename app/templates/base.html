@@ -1,0 +1,49 @@
+{% load static %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
+{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gameshop</title>
+    <link rel="stylesheet" href="static/base.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a href="{% url 'main_page' %}"  class="navbar-icon">
+                    <img src="media/home_icon.jpg" alt="gameshop" height="50" wight="50">
+                </a>
+                <div class="navbar-wrap">
+                    <ul class="navbar-menu">
+                        <li>
+                          <a href="">Купить</a>
+                        </li>
+                {% if request.user.is_authenticated %}
+                    <li>
+                        <a href="{% url 'sell' %}">Продать</a>
+                    </li>
+                {% else %}
+                    <li>
+                        <a href="{% url 'login' %}">Продать</a>
+                    </li>
+                {% endif %}
+                        {% if request.user.is_authenticated %}
+					        <li class="last">{{user.username}} | <a href="{% url 'logout' %}">Выйти</a></li>
+				        {% else %}
+					        <li class="last"><a href="{% url 'register' %}">Регистрация</a> | <a href="{% url 'login' %}">Войти</a></li>
+				        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock content %}
+    </main>
+
+</body>
+</html>
