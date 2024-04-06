@@ -15,6 +15,17 @@
     <img src="/app/media/{{game.photo_game}}" align="left" width="300" height="320" />
     <h1>{{game.game_name}}</h1>
     <b>Количество покупок: </b>{{game.quantity_purchased}}<br>
+
+    {% for p in products %}
+        <li>Игра - {{p.name_of_game}}</li>
+        <li>Описание - {{p.description}}</li>
+        <li>Игра - {{p.date_of_sale}}</li>
+        <li>Цена аккаунта  - {{p.price}} ₽</li>
+        <li>Продавец - {{p.author}}</li>
+=    {% endfor %}
+
+
+
     {% endblock content %}
 </body>
 

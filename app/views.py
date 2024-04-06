@@ -59,10 +59,12 @@ class GamePage(ListView):
         queryset = Name_of_game.objects.get(game_name=game_name)
         return queryset
 
-    def get(self, request, game_name=None, *args, **kwargs):
+    def get(self, request, game_name=None, name_of_game_id=None, *args, **kwargs):
+        all_products_game = Name_of_game.objects.get(game_name=game_name).game_account_set.all()
         one_name_game = Name_of_game.objects.get(game_name=game_name)
         if one_name_game:
-            return render(request, 'game.html', context={'game': one_name_game})
+            return render(request, 'game.html', context={'game': one_name_game,
+                                                                        'products': all_products_game})
         return HttpResponseNotFound('Page not found =(')
 
 class SellGame(CreateView, SellForm, LoginRequiredMixin):
