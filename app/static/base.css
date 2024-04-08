@@ -4,21 +4,21 @@
     background-color: 0077b6;
     border-radius: 40px;
 }
-.navbar .container{
+.container{
     height: inherit;
     display: flex;
-    justify-content: space-between;
+    justify-content: left;
     align-items: center;
+
 }
 .navbar-menu{
     list-style-type: none;
-    padding-left: 0;
+    padding-right: 50px;
     margin-bottom: 15px;
     padding-right: 10px;
 
-
-
 }
+
 .navbar-menu li{
     display: inline-block;
     float: left;
@@ -29,18 +29,46 @@
     border-radius: 20px;
 
 }
-.navbar-menu li.first{
-    right: 980px;
-}
-.navbar-menu li.second{
-    right: 970px;
 
+.last{
+    justify-content:right;
 
 }
+
+.last li{
+    list-style-type: none;
+    display: inline-block;
+    float: right;
+    position: relative;
+    right: 30px;
+    background-color: 03045e;
+    opacity: 60%;
+    border-radius: 20px;
+
+}
+
+.last li a{
+    display: inline-block;
+    color: rgba(255,255,255,100%);
+    opacity: 0.6;
+    text-decoration: none;
+    padding: 10px;
+    transition: all .07s ease-in-out;
+    font-size: 23px;
+}
+.last li a:hover{
+    opacity: 1;
+}
+
+
+#buy{
+    margin-right:10px;
+}
+
 .navbar-menu li a{
     display: inline-block;
     color: rgba(255,255,255,100%);
-    opacity: 1;
+    opacity: 0.6;
     text-decoration: none;
     padding: 10px;
     transition: all .07s ease-in-out;
@@ -53,11 +81,7 @@
 
 }
 
-.navbar-wrap{
-    display: flex;
-    flex-flow: row nowrap;
 
-}
 .navbar-icon{
     font-size: 30px;
     transition: all .1s ease-in-out;

@@ -7,7 +7,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Gameshop</title>
-    <link rel="stylesheet" href="static/base.css">
 </head>
 <body>
     <header>
@@ -16,27 +15,27 @@
                 <a href="{% url 'main_page' %}"  class="navbar-icon">
                     <img src="media/home_icon.png" alt="gameshop" height="60" wight="60">
                 </a>
-                <div class="navbar-wrap">
                     <ul class="navbar-menu">
-                        <li class="first">
+                        <li id="buy">
                           <a href="">Купить</a>
                         </li>
-                {% if request.user.is_authenticated %}
-                    <li>
-                        <a href="{% url 'sell' %}">Продать</a>
-                    </li>
-                {% else %}
-                    <li class="second">
-                        <a href="{% url 'login' %}">Продать</a>
-                    </li>
-                {% endif %}
                         {% if request.user.is_authenticated %}
-					        <li class="last" style="float:right">{{user.username}} | <a href="{% url 'logout' %}">Выйти</a></li>
+                        <li>
+                            <a href="{% url 'sell' %}">Продать</a>
+                        </li>
+                        {% else %}
+                        <li id="sell">
+                            <a href="{% url 'login' %}">Продать</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                    <ul class="last">
+                        {% if request.user.is_authenticated %}
+                        <li style="color:white">{{user.username}} | <a href="{% url 'logout' %}">Выйти</a></li>
 				        {% else %}
-					        <li class="last" style="float:right"><a href="{% url 'register' %}">Регистрация</a> | <a href="{% url 'login' %}">Войти</a></li>
+                        <li><a href="{% url 'register' %}">Регистрация</a> | <a href="{% url 'login' %}">Войти</a></li>
 				        {% endif %}
                     </ul>
-                </div>
             </div>
         </nav>
     </header>
