@@ -106,7 +106,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
-LOGIN_REDIRECT_URL = reverse_lazy('profile')
+LOGIN_REDIRECT_URL = reverse_lazy('main_page')
 LOGOUT_REDIRECT_URL = reverse_lazy('main_page')
 
 LANGUAGE_CODE = 'en-us'

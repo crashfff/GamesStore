@@ -5,7 +5,7 @@ from GamASSstore import settings
 
 urlpatterns = [
     path('', AppMain.as_view(), name='main_page'),
-    path('profile', profile_view, name='profile'),
+    path('profile/<str:username>/', ProfilePage.as_view(), name='profile'),
     path('logout/', logout_user, name='logout'),
     path('register/', RegisterUser.as_view(), name='register'),
     path('game/<game_name>/', GamePage.as_view(), name='game'),

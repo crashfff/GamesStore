@@ -6,7 +6,7 @@ from django.urls import reverse
 class CustomUser(AbstractUser):
 
     def get_absolute_url(self):
-        return reverse('page_user', kwargs={'user_id': self.pk})
+        return reverse('profile', kwargs={'username': self.username})
 
     class Meta:
         db_table = 'CustomUser_app_db'
