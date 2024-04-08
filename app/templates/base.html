@@ -32,7 +32,7 @@
                 {% endif %}
                 {% if request.user.is_authenticated %}
                     <li class="last">
-                        <a href="{% url 'profile' request.user %}"> {{username}} </a>
+                        <a href="{% url 'profile' request.user %}"> {{request.user}} </a>
                     </li>
                     <li>
                         <form method="post" action="{% url 'logout' %}">
