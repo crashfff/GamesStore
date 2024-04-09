@@ -16,22 +16,16 @@
     </header>
     <main>
         {% block content %}
-        <h3>Список игр:</h3>
+        <h2>Список игр:</h2>
         <ul class="list-games">
                {% for g in games %}
-            <a href="{{ g.get_absolute_url }}">
-            <li><img src="/app/media/{{g.photo_game}}" align="left" width="100" height="120"/></li>
-            </a>
-            <h3>Название игры: <b>{{g.game_name}}</b></h3><br>
+            <li><a href="{{ g.get_absolute_url }}"><h3>Название игры: <b>{{g.game_name}}</b></h3><img src="/app/media/{{g.photo_game}}" align="left" width="100" height="120"/></a></li>
         {% endfor %}
         </ul>
-    <h3>Популярные игры:</h3>
+        <h2>Популярные игры:</h2>
         <ul class="pop-games">
-        {% for g in queryset1 %}
-        <a href="{{ g.get_absolute_url }}">
-        <li><img src="/app/media/{{g.photo_game}}" align="left" width="100" height="120"/></li>
-        </a>
-        <h3>Название игры: <b>{{g.game_name}}</b></h3> <br>
+                {% for g in queryset1 %}
+            <li><a href="{{ g.get_absolute_url }}"><h3>Название игры: <b>{{g.game_name}}</b></h3><img src="/app/media/{{g.photo_game}}" align="left" width="100" height="120"/></a></li>
         {% endfor %}
         </ul>
         {% endblock content %}
