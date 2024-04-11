@@ -7,11 +7,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Страница пользователя</title>
+    <title>{{title}}</title>
 </head>
 <body>
 {% block content %}
 <b>{{user.username}}  </b>
+
+{{exists_human_or_not.username}}
+{% for p in Human %}
+    {{p.price}}
+{% endfor %}
 <form method="post" action="{% url 'logout' %}">
     {% csrf_token %}
     <button type="submit">logout</button>
