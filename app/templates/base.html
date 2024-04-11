@@ -1,5 +1,6 @@
 {% load static %}
 {% block css %}
+<link rel="stylesheet"  type="text/css" href= "{% static 'reset.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
 {% endblock %}
 <!DOCTYPE html>
@@ -7,6 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Gameshop</title>
+    <link rel="stylesheet"  href="static/reset.css">
     <link rel="stylesheet" href="static/base.css">
 </head>
 <body>
@@ -40,9 +42,9 @@
                                 <button type="submit">Выйти</button>
                         </form>
                     </li>
-                {% else %}
-                    <li class="last" style="float:right"><a href="{% url 'register' %}">Регистрация</a> | <a href="{% url 'login' %}">Войти</a></li>
-                {% endif %}
+                    {% else %}
+                    <li class="last" ><a href="{% url 'register' %}">Регистрация</a> | <a href="{% url 'login' %}">Войти</a></li>
+                    {% endif %}
                     </ul>
                 </div>
             </div>

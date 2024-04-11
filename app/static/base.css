@@ -1,32 +1,89 @@
+body{
+    background-color: a9def9;
+    opacity: 0.9;
+
+}
+
+
 .navbar{
     width: 100%;
     height: 70px;
-
+    background-color: 0077b6;
+    border-radius: 40px;
 }
-.navbar .container{
+.container{
     height: inherit;
     display: flex;
-    justify-content: space-between;
+    justify-content: left;
+    align-items: center;
+
+}
+.navbar-wrap{
     align-items: center;
 }
 .navbar-menu{
     list-style-type: none;
-    padding-left: 0;
-    margin-bottom: 0;
+    padding-right: 50px;
+    margin-bottom: 15px;
+    padding-right: 10px;
+    align-items: center;
 
 }
+
 .navbar-menu li{
     display: inline-block;
+    float: left;
+    position: relative;
+    right: 30px;
+    background-color: 03045e;
+    opacity: 60%;
+    border-radius: 20px;
 
 }
 
-.navbar-menu li a{
+.last{
+    justify-content:right;
+
+}
+
+.last li{
+    list-style-type: none;
     display: inline-block;
-    color: #000;
+    float: right;
+    position: relative;
+    right: 30px;
+    background-color: 03045e;
+    opacity: 60%;
+    border-radius: 20px;
+
+}
+
+.last li a{
+    display: inline-block;
+    color: rgba(255,255,255,100%);
     opacity: 0.6;
     text-decoration: none;
     padding: 10px;
     transition: all .07s ease-in-out;
+    font-size: 23px;
+}
+.last li a:hover{
+    opacity: 1;
+}
+
+
+#buy{
+    margin-right:10px;
+}
+
+.navbar-menu li a{
+    display: inline-block;
+    color: rgba(255,255,255,100%);
+    opacity: 0.6;
+    text-decoration: none;
+    padding: 10px;
+    transition: all .07s ease-in-out;
+    font-size: 23px;
 
 }
 .navbar-menu li a:hover {
@@ -35,14 +92,11 @@
 
 }
 
-.navbar-wrap{
-    display: flex;
-    flex-flow: row nowrap;
 
-}
 .navbar-icon{
-    border-radius: 50px;
+    font-size: 30px;
     transition: all .1s ease-in-out;
+    padding: 10px;
 
 
 
@@ -51,10 +105,50 @@
     transform: scale(1.05);
 }
 
-list-games li{
-    display: inline;
-    text-decoration: none;
+/* main_page*/
 
-
+.list-games{
+    list-style-type: none;
+    display: inline-flex;
 
 }
+.pop-games{
+    list-style-type: none;
+    display: inline-flex;
+}
+
+.list-games li{
+    display: flex;
+    margin: 10px;
+
+}
+.pop-games li{
+    margin: 10px;
+
+}
+
+.list-games li a{
+    text-decoration: none;
+    color:black;
+    transition: all .07s ease-in-out;
+}
+
+.list-games li a:hover{
+
+    transform: scale(1.05);
+}
+
+.pop-games li a{
+    text-decoration: none;
+    color:black;
+    transition: all .07s ease-in-out;
+}
+
+.pop-games li a:hover{
+    transform: scale(1.05);
+
+}
+
+
+
+
